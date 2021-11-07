@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<syntona version="0.5.22">
+<module bundle="jsyn" id="0" name="JsynVoice" type="voice">
+<view height="148" width="96" xpos="154" ypos="162"/>
+<modules>
+<module bundle="jsyn" id="0" name="frequency" type="aInput">
+<view height="48" width="96" xpos="176" ypos="104"/>
+<proxy max="8000.0" min="40.0" name="frequency" value="646.008332" valueAdded="false"/>
+<jack name="output"/>
+</module>
+<module bundle="jsyn" id="1" name="amplitude" type="aInput">
+<view height="48" width="96" xpos="127" ypos="16"/>
+<proxy max="100.0" min="0.0" name="amplitude" value="1.0" valueAdded="false"/>
+<jack name="output"/>
+</module>
+<module bundle="jsyn" id="2" name="output" type="aOutput">
+<view height="48" width="96" xpos="841" ypos="325"/>
+<jack max="100.0" min="0.0" name="input" value="0.0" valueAdded="false"/>
+</module>
+<module bundle="jsyn" id="3" name="ampEnv" type="DAHDSR">
+<view height="208" width="96" xpos="734" ypos="192"/>
+<jack max="1.0" min="0.0" name="input" value="0.0" valueAdded="false"/>
+<jack max="2.0" min="0.0" name="delay" value="0.0" valueAdded="false"/>
+<jack max="8.0" min="0.01" name="attack" value="0.01" valueAdded="false"/>
+<jack max="2.0" min="0.0" name="hold" value="0.0" valueAdded="false"/>
+<jack max="8.0" min="0.01" name="decay" value="1.8956400000000002" valueAdded="false"/>
+<jack max="1.0" min="0.0" name="sustain" value="0.5" valueAdded="false"/>
+<jack max="8.0" min="0.01" name="release" value="6.68964" valueAdded="false"/>
+<jack max="1.0" min="0.0" name="amplitude" value="1.0" valueAdded="false"/>
+<jack name="output"/>
+</module>
+<module bundle="jsyn" id="4" name="sineOsc" type="sineOsc">
+<view height="88" width="96" xpos="91" ypos="359"/>
+<jack max="20.0" min="0.1" name="frequency" value="20.0" valueAdded="false"/>
+<jack max="1.0" min="0.0" name="amplitude" value="0.9900690750456297" valueAdded="false"/>
+<jack name="output"/>
+</module>
+<module bundle="jsyn" id="5" name="sineOscPM" type="sineOscPM">
+<view height="108" width="96" xpos="532" ypos="59"/>
+<jack max="8000.0" min="40.0" name="frequency" value="733.8070983896115" valueAdded="false"/>
+<jack max="1.0" min="0.0" name="amplitude" value="0.999969482421875" valueAdded="false"/>
+<jack max="1.0" min="0.0" name="modulation" value="0.9012346" valueAdded="false"/>
+<jack name="output"/>
+</module>
+<module bundle="jsyn" id="6" name="sineOsc2" type="sineOsc">
+<view height="88" width="96" xpos="370" ypos="361"/>
+<jack max="8000.0" min="40.0" name="frequency" value="792.4574901886215" valueAdded="false"/>
+<jack max="4.0" min="0.0" name="amplitude" value="6.8" valueAdded="false"/>
+<jack name="output"/>
+</module>
+<module bundle="jsyn" id="7" name="frequency2" type="aInput">
+<view height="48" width="96" xpos="190" ypos="245"/>
+<proxy max="1.0" min="0.0" name="frequency2" value="0.999969482421875" valueAdded="false"/>
+<jack name="output"/>
+</module>
+<module bundle="jsyn" id="8" name="sawOsc" type="sawOsc">
+<view height="88" width="96" xpos="88" ypos="148"/>
+<jack max="8000.0" min="40.0" name="frequency" value="2743.76706303948" valueAdded="false"/>
+<jack max="1.0" min="0.0" name="amplitude" value="0.6968737982737305" valueAdded="false"/>
+<jack name="output"/>
+</module>
+</modules>
+<connections>
+<output id="0" jack="output">
+<input id="5" jack="frequency"/>
+</output>
+<output id="1" jack="output">
+<input id="5" jack="amplitude"/>
+</output>
+<output id="3" jack="output">
+<input id="2" jack="input"/>
+</output>
+<output id="4" jack="output">
+<input id="6" jack="amplitude"/>
+</output>
+<output id="5" jack="output">
+<input id="3" jack="amplitude"/>
+</output>
+<output id="6" jack="output">
+<input id="5" jack="modulation"/>
+</output>
+<output id="7" jack="output">
+<input id="5" jack="amplitude"/>
+</output>
+<output id="8" jack="output">
+<input id="5" jack="amplitude"/>
+</output>
+</connections>
+<jack name="on"/>
+<jack name="off"/>
+<jack max="8000.0" min="40.0" name="frequency" value="646.008332" valueAdded="false"/>
+<jack max="100.0" min="0.0" name="amplitude" value="1.0" valueAdded="false"/>
+<jack name="output"/>
+<jack max="1.0" min="0.0" name="frequency2" value="0.999969482421875" valueAdded="false"/>
+</module>
+</syntona>
